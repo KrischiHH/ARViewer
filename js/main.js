@@ -1,2 +1,4 @@
-// script.js
-// Hier kannst du zukünftige Funktionen hinzufügen, wenn nötig.
+// main.js
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Die AR-Anwendung ist bereit.");
+});
