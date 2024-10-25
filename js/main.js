@@ -42,4 +42,4 @@ function animate() {
 init();
 
 // Beispiel: Laden eines Modells (hier eine Platzhalter-URL)
-loadModel('path/to/your/model.glb'); // Ersetze dies durch den tatsächlichen Pfad oder die URL deines 3D-Modells
+loadModel('https://github.com/KrischiHH/ARViewer/blob/c3c976179fb3dad3f3ae227019e381cd20864ab5/AR-Tree.glb'); // Ersetze dies durch den tatsächlichen Pfad oder die URL deines 3D-Modells
