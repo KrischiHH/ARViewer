@@ -1,7 +1,6 @@
 // Initialisierung der Variablen
 let scene, camera, renderer;
 let model;
-let loadingText;
 
 function init() {
     // Szene und Kamera initialisieren
