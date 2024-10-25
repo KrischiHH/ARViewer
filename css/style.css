@@ -1,20 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+/* style.css */
+
+/* Allgemeine Stile für den Body */
+body { 
+    margin: 0; /* Entfernt die Standard-Margen */
+    overflow: hidden; /* Verhindert das Scrollen */
+    background-color: #000; /* Setzt den Hintergrund auf schwarz */
 }
 
-#upload-container {
-    margin-bottom: 20px;
+/* Stil für den Viewer-Bereich */
+#viewer { 
+    width: 100vw; /* Volle Breite des Viewports */
+    height: 100vh; /* Volle Höhe des Viewports */
+    display: flex; /* Flexbox für einfaches Layout */
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal */
 }
 
-#viewer {
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    background-color: #ddd;
+/* Stil für die Ladeanzeige */
+.loading-text {
+    position: absolute; /* Positioniert die Ladeanzeige relativ zum Body */
+    top: 50%; /* Zentriert vertikal */
+    left: 50%; /* Zentriert horizontal */
+    transform: translate(-50%, -50%); /* Verschiebt die Anzeige zur exakten Mitte */
+    font-size: 24px; /* Setzt die Schriftgröße */
+    color: white; /* Setzt die Schriftfarbe auf weiß */
+    text-align: center; /* Zentriert den Text */
+}
+
+/* Optional: Stile für das Modell */
+.model {
+    transition: transform 0.3s ease; /* Fügt eine sanfte Übergangsanimation hinzu */
 }
