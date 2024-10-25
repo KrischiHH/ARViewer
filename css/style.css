@@ -1,38 +1,11 @@
 /* css/style.css */
-
-/* Setzt den gesamten Margin und Padding auf 0 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Stellt sicher, dass der Body den gesamten Bildschirm einnimmt */
 body {
-    width: 100vw; /* Breite des Viewports */
-    height: 100vh; /* Höhe des Viewports */
-    overflow: hidden; /* Verhindert Scrollen */
-    background-color: #000; /* Hintergrundfarbe */
-    color: #fff; /* Textfarbe */
-    display: flex; /* Flexbox-Layout */
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung */
-    font-family: Arial, sans-serif; /* Schriftart */
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* Stil für die Überschrift */
-h1 {
-    position: absolute; /* Absolute Positionierung */
-    top: 10px; /* Abstand von oben */
-    left: 50%; /* Zentrierung */
-    transform: translateX(-50%); /* Zentrierung anpassen */
-    font-size: 24px; /* Schriftgröße */
-    text-align: center; /* Textzentrierung */
-    z-index: 10; /* Vor anderen Elementen anzeigen */
-}
-
-/* Stil für den AR-Bereich */
 a-scene {
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
+    width: 100%;
+    height: 100%;
 }
