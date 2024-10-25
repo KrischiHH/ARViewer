@@ -13,10 +13,11 @@
         <a-marker preset="hiro">
             <a-entity id="model" 
                       gltf-model="https://github.com/KrischiHH/ARViewer/raw/refs/heads/main/AR-Tree%20(10).glb" 
-                      scale="0.2 0.2 0.2"> <!-- Scale-Wert angepasst -->
+                      scale="1 1 1" 
+                      position="0 0 0">
             </a-entity>
         </a-marker>
-        <a-entity camera="active: true; fov: 100"></a-entity> <!-- FOV-Wert angepasst -->
+        <a-entity camera="active: true; fov: 90; position: 0 1.6 2"></a-entity> <!-- Kamera höher und weiter zurück -->
     </a-scene>
 </body>
 </html>
