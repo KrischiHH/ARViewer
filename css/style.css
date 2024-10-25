@@ -1,11 +1,21 @@
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; /* Verhindert das Scrollen */
+    height: 100vh; /* Vollständige Höhe der Ansicht */
+    display: flex; /* Flexbox für zentrierte Ausrichtung */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    background-color: #000; /* Dunkler Hintergrund */
 }
 
 h1 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
+    position: absolute; /* Absolut positioniert über der Szene */
+    color: white; /* Weißer Text für bessere Sichtbarkeit */
+    font-size: 24px; /* Schriftgröße */
+    z-index: 1; /* Über andere Elemente legen */
+}
+
+a-scene {
+    width: 100%; /* Breite der Szene auf 100% setzen */
+    height: 100%; /* Höhe der Szene auf 100% setzen */
 }
