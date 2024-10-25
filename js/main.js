@@ -18,6 +18,7 @@ camera.position.z = 5;
 function loadModel(url) {
     const loader = new THREE.GLTFLoader();
     loader.load(url, (gltf) => {
+        console.log("Modell erfolgreich geladen");
         scene.add(gltf.scene);
         render();
     }, undefined, function (error) {
@@ -26,8 +27,7 @@ function loadModel(url) {
 }
 
 // Modell-URL
-loadModel('https://www.dropbox.com/scl/fi/p9senv332h0meu658xskd/AR-Tree.glb?rlkey=b1lxke4p20tqfzoyji5fag38q&dl=1
-');
+loadModel('https://KrischiHH.github.io/ARViewer/AR-Tree.glb');
 
 // Render-Funktion
 function render() {
