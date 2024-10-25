@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Viewer</title>
+    <title>AR-Viewer</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,9 +13,12 @@
         <button onclick="loadModel()">Modell laden</button>
     </div>
     <div id="viewer"></div>
+
+    <!-- Three.js und AR.js einbinden -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
-
