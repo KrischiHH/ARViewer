@@ -26,7 +26,8 @@ function loadModel(url) {
 }
 
 // Modell-URL
-loadModel('https://drive.google.com/uc?export=download&id=1LG8Ce9_C-WyVq9RvWJr0BVUkXCdSxhpE');
+loadModel('https://www.dropbox.com/scl/fi/p9senv332h0meu658xskd/AR-Tree.glb?rlkey=b1lxke4p20tqfzoyji5fag38q&dl=1
+');
 
 // Render-Funktion
 function render() {
