@@ -16,7 +16,7 @@ camera.position.z = 5;
 
 // Funktion zum Laden des Modells
 function loadModel(url) {
-    const loader = new THREE.GLTFLoader();
+    const loader = new THREE.GLTFLoader(); // Hier sicherstellen, dass der Loader richtig instanziiert wird
     loader.load(url, (gltf) => {
         console.log("Modell erfolgreich geladen");
         scene.add(gltf.scene);
