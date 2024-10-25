@@ -16,6 +16,6 @@ h1 {
 }
 
 a-scene {
-    width: 100%; /* Breite der Szene auf 100% setzen */
-    height: 100%; /* Höhe der Szene auf 100% setzen */
+    width: 100vw; /* Vollständige Breite des Viewports */
+    height: 100vh; /* Vollständige Höhe des Viewports */
 }
