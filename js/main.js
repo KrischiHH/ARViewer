@@ -52,4 +52,4 @@ function animate() {
 init();
 
 // Modell laden (hier den Link zum 3D-Modell einfügen)
-loadModel('https://github.com/KrischiHH/ARViewer/releases/download/3d/AR-Tree.glb');
+loadModel('https://drive.google.com/file/d/1LG8Ce9_C-WyVq9RvWJr0BVUkXCdSxhpE/view?usp=drive_link');
