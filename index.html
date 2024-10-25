@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR-Viewer</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>AR-Viewer</h1>
-    <div id="upload-container">
-        <input type="file" id="file-upload" accept=".gltf, .glb, .obj, .fbx">
-        <button onclick="loadModel()">Modell laden</button>
-    </div>
-    <div id="viewer"></div>
-
-    <!-- Three.js und AR.js einbinden -->
+    <title>3D AR Viewer</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #viewer { width: 100vw; height: 100vh; }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="viewer"></div>
+    <script src="main.js"></script>
 </body>
 </html>
