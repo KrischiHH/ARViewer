@@ -14,7 +14,8 @@
     <h1>AR Viewer</h1>
     <a-scene embedded arjs>
         <a-marker preset="hiro">
-            <a-entity id="model" gltf-model="models/AR-Tree.glb"></a-entity>
+            <!-- Verwende das gltf-model Attribut für das GLB-Modell -->
+            <a-entity id="model" gltf-model="https://github.com/KrischiHH/ARViewer/releases/download/3d/AR-Tree.glb"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
