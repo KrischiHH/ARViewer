@@ -12,8 +12,12 @@ function init() {
     document.getElementById('viewer').appendChild(renderer.domElement);
     
     // Licht hinzufügen
-    const light = new THREE.AmbientLight(0xffffff);
-    scene.add(light);
+    const ambientLight = new THREE.AmbientLight(0xffffff); // Umgebungslicht
+    scene.add(ambientLight);
+    
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100); // Punktlicht
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
     
     // Kamera-Position festlegen
     camera.position.z = 5;
@@ -23,6 +27,8 @@ function loadModel(url) {
     const loader = new THREE.GLTFLoader();
     loader.load(url, function(gltf) {
         model = gltf.scene;
+        model.scale.set(1, 1, 1); // Skalierung anpassen
+        model.position.set(0, 0, 0); // Position anpassen
         scene.add(model);
         animate();
     }, undefined, function(error) {
@@ -41,6 +47,5 @@ function animate() {
 // Initialisierung aufrufen
 init();
 
-// Beispiel: Laden eines Modells (hier eine Platzhalter-URL)
-loadModel('https://raw.githubusercontent.com/KrischiHH/ARViewer/main/AR-Tree.glb
-'); // Ersetze dies durch den tatsächlichen Pfad oder die URL deines 3D-Modells
+// Modell laden
+loadModel('https://raw.githubusercontent.com/KrischiHH/ARViewer/main/AR-Tree.glb');
