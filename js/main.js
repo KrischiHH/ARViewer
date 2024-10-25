@@ -49,4 +49,4 @@ function animate() {
 init();
 
 // Modell laden
-loadModel('https://raw.githubusercontent.com/KrischiHH/ARViewer/main/AR-Tree.glb');
+loadModel('https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Astronaut/glTF/Astronaut.gltf');
