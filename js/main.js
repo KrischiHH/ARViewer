@@ -13,17 +13,6 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('viewer').appendChild(renderer.domElement);
 
-    // Ladeanzeige hinzufügen
-    loadingText = document.createElement('div');
-    loadingText.style.position = 'absolute';
-    loadingText.style.top = '50%';
-    loadingText.style.left = '50%';
-    loadingText.style.transform = 'translate(-50%, -50%)';
-    loadingText.style.fontSize = '24px';
-    loadingText.style.color = 'white';
-    loadingText.innerText = 'Lade Modell...';
-    document.body.appendChild(loadingText);
-
     // Lichtquellen hinzufügen
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
@@ -46,7 +35,7 @@ function loadModel(url) {
         animate();
 
         // Ladeanzeige entfernen
-        document.body.removeChild(loadingText);
+        document.getElementById('loadingText').style.display = 'none';
     }, undefined, function(error) {
         console.error(error);
     });
