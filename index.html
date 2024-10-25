@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR Viewer</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe-ar.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+<body>
+    <a-scene embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
         <a-marker preset="hiro">
-            <a-entity gltf-model="https://github.com/KrischiHH/ARViewer/raw/refs/heads/main/AR-Tree%20(10).glb" scale="0.5 0.5 0.5"></a-entity>
+            <a-entity id="model" 
+                      gltf-model="https://github.com/KrischiHH/ARViewer/raw/refs/heads/main/AR-Tree%20(10).glb" 
+                      scale="0.1 0.1 0.1" 
+                      position="0 0 0">
+            </a-entity>
         </a-marker>
-        <a-entity camera></a-entity>
+        <a-entity camera="active: true; fov: 70; position: 0 1.6 3"></a-entity> <!-- Kameraeinstellungen -->
     </a-scene>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
