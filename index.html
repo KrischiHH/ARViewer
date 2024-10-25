@@ -9,15 +9,15 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs='sourceType: webcam; videoTexture: true;'>
+    <a-scene embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
         <a-marker preset="hiro">
             <a-entity id="model" 
                       gltf-model="https://github.com/KrischiHH/ARViewer/raw/refs/heads/main/AR-Tree%20(10).glb" 
-                      scale="0.2 0.2 0.2" 
+                      scale="0.1 0.1 0.1" <!-- Hier die Größe verringert -->
                       position="0 0 0">
             </a-entity>
         </a-marker>
-        <a-entity camera="active: true; fov: 80; position: 0 1.6 5"></a-entity> <!-- Kamera höher und weiter zurück -->
+        <a-entity camera="active: true; fov: 70; position: 0 1.6 2.5"></a-entity> <!-- Kamera höher und näher -->
     </a-scene>
 </body>
 </html>
