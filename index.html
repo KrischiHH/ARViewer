@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAR Beispiel</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AR Viewer</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS-Pfad -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.148.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
-    <a-scene embedded arjs='sourceType: webcam;'>
+    <h1>AR Viewer</h1>
+    <a-scene embedded arjs>
         <a-marker preset="hiro">
-            <a-entity 
-                gltf-model="https://github.com/KrischiHH/ARViewer/releases/download/3d/AR-Tree.glb" 
-                scale="0.1 0.1 0.1" 
-                position="0 0 0">
-            </a-entity>
+            <a-entity id="model" gltf-model="models/AR-Tree.glb"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
