@@ -52,4 +52,4 @@ function animate() {
 init();
 
 // Modell laden (hier den Link zum 3D-Modell einfügen)
-loadModel('https://drive.google.com/file/d/1LG8Ce9_C-WyVq9RvWJr0BVUkXCdSxhpE/view?usp=drive_link');
+loadModel('https://drive.google.com/uc?export=download&id=1LG8Ce9_C-WyVq9RvWJr0BVUkXCdSxhpE');
