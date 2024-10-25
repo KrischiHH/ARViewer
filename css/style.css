@@ -1,10 +1,11 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: #000; /* Hintergrundfarbe */
 }
 
-a-scene {
-    width: 100vw; /* Breite des Szenenbereichs */
-    height: 100vh; /* Höhe des Szenenbereichs */
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
 }
