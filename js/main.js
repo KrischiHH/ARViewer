@@ -11,10 +11,11 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('viewer').appendChild(renderer.domElement);
     
-    // Licht hinzufügen
-    const ambientLight = new THREE.AmbientLight(0xffffff); // Umgebungslicht
+    // Standard Ambient Light hinzufügen
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Etwas Licht
     scene.add(ambientLight);
     
+    // Punktlicht hinzufügen für bessere Beleuchtung
     const pointLight = new THREE.PointLight(0xffffff, 1, 100); // Punktlicht
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
