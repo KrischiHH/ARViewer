@@ -1,38 +1,23 @@
-/* css/style.css */
-
-/* Setzt den gesamten Margin und Padding auf 0 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Stellt sicher, dass der Body den gesamten Bildschirm einnimmt */
-body {
-    width: 100vw; /* Breite des Viewports */
-    height: 100vh; /* Höhe des Viewports */
-    overflow: hidden; /* Verhindert Scrollen */
-    background-color: #000; /* Hintergrundfarbe */
-    color: #fff; /* Textfarbe */
-    display: flex; /* Flexbox-Layout */
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung */
-    font-family: Arial, sans-serif; /* Schriftart */
-}
-
-/* Stil für die Überschrift */
-h1 {
-    position: absolute; /* Absolute Positionierung */
-    top: 10px; /* Abstand von oben */
-    left: 50%; /* Zentrierung */
-    transform: translateX(-50%); /* Zentrierung anpassen */
-    font-size: 24px; /* Schriftgröße */
-    text-align: center; /* Textzentrierung */
-    z-index: 10; /* Vor anderen Elementen anzeigen */
-}
-
-/* Stil für den AR-Bereich */
-a-scene {
-    width: 100%; /* Volle Breite */
-    height: 100%; /* Volle Höhe */
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Viewer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+        <a-marker preset="hiro">
+            <a-entity id="model" 
+                      gltf-model="https://github.com/KrischiHH/ARViewer/raw/refs/heads/main/AR-Tree%20(10).glb" 
+                      scale="0.1 0.1 0.1" 
+                      position="0 0 0">
+            </a-entity>
+        </a-marker>
+        <a-entity camera="active: true; fov: 70; position: 0 1.6 3"></a-entity> <!-- Kameraeinstellungen -->
+    </a-scene>
+</body>
+</html>
