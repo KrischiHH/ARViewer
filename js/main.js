@@ -1,5 +1,6 @@
 let scene, camera, renderer;
 let model;
+let loadingText;
 
 function init() {
     // Szene und Kamera initialisieren
@@ -11,12 +12,23 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('viewer').appendChild(renderer.domElement);
     
-    // Standard Ambient Light hinzufügen
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Etwas Licht
+    // Ladeanzeige hinzufügen
+    loadingText = document.createElement('div');
+    loadingText.style.position = 'absolute';
+    loadingText.style.top = '50%';
+    loadingText.style.left = '50%';
+    loadingText.style.transform = 'translate(-50%, -50%)';
+    loadingText.style.fontSize = '24px';
+    loadingText.style.color = 'white';
+    loadingText.innerText = 'Lade Modell...';
+    document.body.appendChild(loadingText);
+    
+    // Ambient Light hinzufügen
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
     
-    // Punktlicht hinzufügen für bessere Beleuchtung
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100); // Punktlicht
+    // Punktlicht hinzufügen
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
     
@@ -28,10 +40,13 @@ function loadModel(url) {
     const loader = new THREE.GLTFLoader();
     loader.load(url, function(gltf) {
         model = gltf.scene;
-        model.scale.set(1, 1, 1); // Skalierung anpassen
-        model.position.set(0, 0, 0); // Position anpassen
+        model.scale.set(1, 1, 1);
+        model.position.set(0, 0, 0);
         scene.add(model);
         animate();
+        
+        // Ladeanzeige entfernen
+        document.body.removeChild(loadingText);
     }, undefined, function(error) {
         console.error(error);
     });
@@ -40,7 +55,7 @@ function loadModel(url) {
 function animate() {
     requestAnimationFrame(animate);
     if (model) {
-        model.rotation.y += 0.01; // Modell leicht drehen
+        model.rotation.y += 0.01;
     }
     renderer.render(scene, camera);
 }
@@ -49,4 +64,4 @@ function animate() {
 init();
 
 // Modell laden
-loadModel('https://raw.githubusercontent.com/KrischiHH/ARViewer/main/AR-Tree.glb');
+loadModel('https://github.com/KrischiHH/ARViewer/releases/download/3d/AR-Tree.glb');
