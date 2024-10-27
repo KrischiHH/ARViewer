@@ -1,20 +1,21 @@
 // main.js
 
-// Funktion, um das AR-Modell zu laden und die Kameraeinstellungen zu initialisieren
-function initAR() {
-    const model = document.getElementById('model');
+// Dynamische Anpassung für Mobil- und Desktopgeräte
+function configureARSettings() {
+    const arScene = document.querySelector('a-scene');
+    const camera = document.querySelector('#camera');
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const screenAspectRatio = window.innerWidth / window.innerHeight;
 
-    // Hier kannst du weitere Einstellungen oder Animationen hinzufügen
-    model.addEventListener('model-loaded', () => {
-        console.log('Das 3D-Modell wurde geladen.');
-    });
-
-    // Kamera-Event hinzufügen (optional)
-    const camera = document.querySelector('[camera]');
-    camera.addEventListener('loaded', () => {
-        console.log('Die Kamera ist bereit.');
-    });
+    if (isMobile) {
+        arScene.setAttribute('arjs', `sourceType: webcam; debugUIEnabled: false; sourceWidth: 1080; sourceHeight: 1920; displayWidth: ${window.innerWidth}; displayHeight: ${window.innerHeight};`);
+        camera.setAttribute('camera', `fov: ${screenAspectRatio > 1 ? 70 : 60}`);
+    } else {
+        arScene.setAttribute('arjs', `sourceType: webcam; debugUIEnabled: false; sourceWidth: 1920; sourceHeight: 1080; displayWidth: ${window.innerWidth}; displayHeight: ${window.innerHeight};`);
+        camera.setAttribute('camera', 'fov: 50');
+    }
 }
 
-// Wenn die Seite geladen ist, AR initialisieren
-window.addEventListener('load', initAR);
+// AR-Konfiguration beim Laden und bei Größenänderungen
+window.addEventListener('load', configureARSettings);
+window.addEventListener('resize', configureARSettings);
