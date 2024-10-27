@@ -42,9 +42,9 @@
 
             // Parameter für Mobilgerät und Desktopgerät
             if (isMobile) {
-                // Einstellungen für Mobilgeräte
-                arScene.setAttribute('arjs', 'sourceType: webcam; debugUIEnabled: false; sourceWidth: 1280; sourceHeight: 720; displayWidth: window.innerWidth; displayHeight: window.innerHeight;');
-                document.querySelector('#camera').setAttribute('camera', 'fov: 70'); // Etwas geringer Zoom für mobiles Gerät
+                // Einstellungen für Mobilgeräte mit 1080x1920
+                arScene.setAttribute('arjs', 'sourceType: webcam; debugUIEnabled: false; sourceWidth: 1080; sourceHeight: 1920; displayWidth: window.innerWidth; displayHeight: window.innerHeight;');
+                document.querySelector('#camera').setAttribute('camera', 'fov: 65'); // Leichter Zoom für mobiles Gerät
             } else {
                 // Einstellungen für Desktops
                 arScene.setAttribute('arjs', 'sourceType: webcam; debugUIEnabled: false; sourceWidth: 640; sourceHeight: 480; displayWidth: window.innerWidth; displayHeight: window.innerHeight;');
