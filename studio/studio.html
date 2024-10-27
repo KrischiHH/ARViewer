@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AR Studio</h1>
+    </header>
+    <main>
+        <section id="uploadSection">
+            <h2>3D-Modell hochladen</h2>
+            <form id="uploadForm">
+                <input type="file" id="modelUpload" accept=".glb, .gltf" required>
+                <button type="submit">Modell hochladen</button>
+            </form>
+        </section>
+        <section id="markerSelection">
+            <h2>Marker auswählen</h2>
+            <select id="markerSelect">
+                <option value="hiro">Hiro Marker</option>
+                <option value="zombie">Zombie Shirt Marker</option>
+            </select>
+        </section>
+        <section id="previewSection">
+            <h2>AR-Vorschau</h2>
+            <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+                <a-marker id="marker" preset="hiro">
+                    <a-entity id="model" gltf-model="" scale="0.1 0.1 0.1"></a-entity>
+                </a-marker>
+                <a-entity camera></a-entity>
+            </a-scene>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
